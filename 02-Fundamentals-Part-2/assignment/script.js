@@ -21,6 +21,7 @@ const worldPop = 7900;
 const usaPop = 350;
 const canPop = 37;
 const mexPop = 128;
+const finPop = 5;
 // convert population to percentage of world population
 //
 // // function declaration version
@@ -68,11 +69,40 @@ const percentageOfWorld3 = (population) => Math.round((population / worldPop) * 
 
 // 04 - Functions Calling Other Functions
 // create describe population function
-const describePopulation = function (country, population) {
-	const percentageOfCountry = percentageOfWorld3(population);
-	return `${country} has ${population} million people, which is about ${percentageOfCountry} % of the world population.`;
-};
+// const describePopulation = function (country, population) {
+// 	const percentageOfCountry = percentageOfWorld3(population);
+// 	return `${country} has ${population} million people, which is about ${percentageOfCountry} % of the world population.`;
+// };
 
-console.log(describePopulation("Canada", 37));
-console.log(describePopulation("The United States", 370));
-console.log(describePopulation("Mexico", 128));
+// console.log(describePopulation("Canada", 37));
+// console.log(describePopulation("The United States", 370));
+// console.log(describePopulation("Mexico", 128));
+
+const populations = [350, 36, 128, 11];
+
+//console.log(populations.length == 4);
+
+const percentages = [
+	percentageOfWorld3(usaPop),
+	percentageOfWorld3(canPop),
+	percentageOfWorld3(mexPop),
+	percentageOfWorld3(finPop),
+];
+//console.log(percentages);
+
+//create an array with neighboring countries of USA
+const neighbors = ["Canada", "Mexico"];
+//log array to console
+console.log(neighbors);
+//add new country to array
+neighbors.push("Utopia");
+//log array with new country on it
+console.log(neighbors);
+neighbors.pop();
+console.log(neighbors);
+if (!neighbors.includes("Germany")) {
+	console.log("Probably not a central European country");
+}
+console.log(neighbors.indexOf("Canada"));
+neighbors[0] = "Not Canada";
+console.log(neighbors);

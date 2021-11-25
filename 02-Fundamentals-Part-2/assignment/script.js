@@ -106,3 +106,13 @@ if (!neighbors.includes("Germany")) {
 console.log(neighbors.indexOf("Canada"));
 neighbors[0] = "Not Canada";
 console.log(neighbors);
+
+const myCountry = {
+	country: "Canada",
+	capital: "Ottawa",
+	language: "English",
+	population: 36,
+	neighbors: ["United States"],
+};
+
+console.log(myCountry);

@@ -14,38 +14,69 @@
 // 4. Print a nice output to the console, saying who has the higher BMI
 // 5. Use a template literal to include the BMI values in the output
 
-//store mark's weight and height
-let markWeight = 95;
-let markHeight = 1.88;
+// //store mark's weight and height
+// let markWeight = 95;
+// let markHeight = 1.88;
 
-//store john's weight and height
-let johnWeight = 85;
-let johnHeight = 1.76;
-
+// //store john's weight and height
+// let johnWeight = 85;
+// let johnHeight = 1.76;
+// // true if mark has a higher BMI
 let markHigherBMI = true;
 
-//BMI formula
+// //BMI formula
 
-function bmiCalc(weight, height) {
-  let bmi;
-  bmi = weight / (height * height);
-  return Math.round(bmi * 10) / 10;
-}
+// function bmiCalc(weight, height) {
+// 	let bmi;
+// 	bmi = weight / (height * height);
+// 	return Math.round(bmi * 10) / 10;
+// }
 
-let markBMI = bmiCalc(markWeight, markHeight);
-let johnBMI = bmiCalc(johnWeight, johnHeight);
+// let markBMI = bmiCalc(markWeight, markHeight);
+// let johnBMI = bmiCalc(johnWeight, johnHeight);
 
-if (markBMI > johnBMI) {
-  markHigherBMI = true;
-} else {
-  markHigherBMI = false;
-}
+// if (markBMI > johnBMI) {
+// 	markHigherBMI = true;
+// } else {
+// 	markHigherBMI = false;
+// }
+
+// markHigherBMI
+// 	? console.log(`Mark's BMI (${markBMI}) is higher than John's BMI ${johnBMI}`)
+// 	: console.log(`Mark's BMI (${markBMI}) is lower than John's BMI (${johnBMI}).`);
+
+// // console.log(`Mark's BMI is ${markBMI}. John's BMI is ${johnBMI}`)
+// // console.log(markHigherBMI)
+
+// Fundamentals 2 Coding Challenge #3
+
+const mark = {
+	fullName: "Mark Miller",
+	mass: 78,
+	height: 1.69,
+
+	calcBMI: function () {
+		this.BMI = Math.round((this.mass / (this.height * this.height)) * 10) / 10;
+		return this.BMI;
+	},
+};
+
+const john = {
+	fullName: "John Smith",
+	mass: 92,
+	height: 1.95,
+
+	calcBMI: function () {
+		this.BMI = Math.round((this.mass / (this.height * this.height)) * 10) / 10;
+		return this.BMI;
+	},
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+mark.BMI > john.BMI ? (markHigherBMI = true) : (markHigherBMI = false);
 
 markHigherBMI
-  ? console.log(`Mark's BMI (${markBMI}) is higher than John's BMI ${johnBMI}`)
-  : console.log(
-      `Mark's BMI (${markBMI}) is lower than John's BMI (${johnBMI}).`
-    );
-
-// console.log(`Mark's BMI is ${markBMI}. John's BMI is ${johnBMI}`)
-// console.log(markHigherBMI)
+	? console.log(`Mark's BMI ${mark.BMI} is higher than John's BMI ${john.BMI}`)
+	: console.log(`Mark's BMI ${mark.BMI} is lower than John's BMI ${john.BMI}.`);

@@ -113,6 +113,41 @@ const myCountry = {
 	language: "English",
 	population: 36,
 	neighbors: ["United States"],
+
+	checkIsland: function () {
+		// if there are no neighboring countries checkIsland is true. If there are neighboring countries checkIsland is false
+		return !neighbors.length > 0 ? (this.isIsland = true) : (this.isIsland = false);
+	},
+
+	describe: function () {
+		console.log(
+			`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} neighboring country and a capital called ${this.capital}`
+		);
+	},
 };
 
+myCountry.describe();
+console.log(myCountry.checkIsland());
 console.log(myCountry);
+
+// console.log(
+// 	`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbors.length} neighboring country and a capital called ${myCountry.capital}`
+// );
+
+// myCountry.population += 2;
+// console.log(myCountry.population);
+// myCountry["population"] -= 2;
+// console.log(myCountry.population);
+//console.log(myCountry);
+
+// const Jonas = {
+// 	firstName: "Jonas",
+// 	lastName: "Schmedtmann",
+// 	age: 2037 - 1991,
+// 	job: "teacher",
+// 	friends: ["Michael", "Peter", "Steven"],
+// };
+
+// console.log(
+// 	`${Jonas.firstName} has ${Jonas.friends.length} friends, and his best friend is called ${Jonas.friends[0]}`
+// );
